@@ -1,0 +1,19 @@
+{{#if items}}
+  <ul>
+    {{#each items}}
+      <li data-id="{{id}}">
+        <a>
+          <img src="/images/items/{{image}}">
+        </a>
+        <span>{{quantity}}x${{format_price price}}</span>
+      </li>
+    {{/each}}
+  </ul>
+  <div>
+    <h3>YOUR<br>Shopping CART</h3>
+    <p>${{format_price total}}</p>
+    <a id="empty_cart" href="#">EMPTY CART</a>
+    <a id="checkout" href="/checkout">CHECKOUT</a>
+  </div>
+{{else}}
+{{/if}}

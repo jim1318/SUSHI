@@ -1,0 +1,50 @@
+include /_mixins
+
+doctype html
+html
+  head
+    title= "Jim's Sushi Store"
+    //- Load Fonts
+    link(href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet")
+    //- Load CSS Files
+    +stylesheet_link_tag('style')
+
+    //-Vendor JS Files (combined into one)
+    +javascript_include_tag('vendor/all')
+
+    //-Handelbars Templates
+    +javascript_include_tag('handlebars_templates')  
+  body
+    div.container
+      header
+        h1.logo
+          a(href="/")
+        a(href="/")#cart-info
+
+      main 
+        #cart-summary
+        #content
+          block content
+
+      footer
+        <a href="/admin">ADMIN TOOLS</a>
+        p Jim Finnigan Built This Website
+        p It is awesome
+
+    //-Backbone Javascript ifles
+    +javascript_include_tag('application')
+    +javascript_include_tag('models/item')
+    +javascript_include_tag('collections/items', 'collections/cart_items')
+    +javascript_include_tag('views/items', 'views/item', 'views/item_detail', 'views/cart_info', 'views/cart_summary', 'views/checkout')
+
+    //-Include Admin
+    +javascript_include_tag('views/admin_item', 'views/edit_item')
+
+    //-The period here is jade syntax
+    //-Populate App.album var. albums defined in routes    
+    script(type="text/javascript").                       
+      App.items = new Items(!{JSON.stringify(items)});    
+
+    //-Backbone Router
+    +javascript_include_tag("router")  
+    block scripts 

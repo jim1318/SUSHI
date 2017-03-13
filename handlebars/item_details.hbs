@@ -1,0 +1,21 @@
+
+  <div id="item_bar">
+    <a href="/menu/{{prevId}}" id="left_nav"></a>
+    <img src="../images/items/{{model.image}}">
+    <div id="item_summary">
+      <h1>{{model.name}}</h1>
+      <p>{{model.idescription}}</p>
+      <h2>{{format_price model.iprice}}</h2>
+      <button>+ ADD TO CART</button>
+    </div>
+    <div id="item_facts">
+      <h1> SUSHI DETAILS </h1>
+      <p>protein: {{model.stats.protein}}</p>
+      <p>fat: {{model.stats.fat}}</p>
+      <p>carbohydrate: {{model.stats.carbohydrate}}</p>
+      <p>energy: {{model.stats.energy}}</p>
+      <p>sugar: {{model.stats.sugar}}</p>
+    </div>
+    <a href="/menu/{{nextId}}" id="right_nav"></a>
+  </div>
+

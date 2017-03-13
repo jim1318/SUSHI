@@ -1,0 +1,22 @@
+{
+  "name": "sushi",
+  "description": "sucshi bower file",
+  "main": "",
+  "authors": [
+    "Jim Finnigan <jimfinnigan1318@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "backbone": "^1.3.3",
+    "handlebars": "^4.0.5"
+  }
+}

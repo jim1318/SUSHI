@@ -1,0 +1,37 @@
+<div id="check_bar">
+    <h1>Order Details</h1>
+    <table>
+      <tr>
+        <th>Item</th>
+        <th></th>
+        <th>Quantity</th>
+        <th>Price</th>
+      </tr>
+      {{#each items}}
+        <tr data-id="{{id}}">
+          <td>
+            <div class="checkout_image">
+              <img src="/images/items/{{image}}">
+            </div>
+          </td>  
+          <td>
+              <h2>{{name}}</h2>
+          </td>
+          <td>
+            <a href="#" class="subtract">-</a>
+            <p class="quantity">{{quantity}}</p>
+            <a href="#" class="add">+</a>
+          </td>
+          <td>
+            <h3>${{price}}<h3>
+          </td>
+        </tr>
+      {{/each}}
+    </table>
+    <p>Total:<span>${{total}}</span><p>
+    <a href="#" id="cancel_order">CANCEL ORDER</a>
+    <a href="#" id="order_now">Order Now!</a>
+</div>
+
+
+
