@@ -1,28 +1,31 @@
-<img src="../images/items/{{model.image}}">
-<dl>
-  <dd><label for="name">Name:</label></dd> 
-  <dt><input type="text" name="name" id="name" value="{{model.name}}" /></dt>
+<img src="/images/items/{{model.image}}">
+<form action="/admin/edit/{{model.id}}" method="PUT"> 
+  <fieldset>
+    <dl>
+      <dd><label for="name">Name:</label></dd> 
+      <dt><input type="text" name="name" id="name" value="{{model.name}}" /></dt>
 
-  <dd><label for="description">Description:</label></dd> 
-  <dt><input type="text" name="description" id="description" value="{{model.description}}" /></dt>
+      <dd><label for="description">Description:</label></dd> 
+      <dt><input type="text" name="description" id="description" value="{{model.description}}" /></dt>
 
-  <dd><label for="price">price:</label></dd> 
-  <dt><input type="text" name="price" id="price" value="{{model.price}}" /></dt>
+      <dd><label for="price">price:</label></dd> 
+      <dt><input type="text" name="price" id="price" value="{{model.price}}" /></dt>
 
-  <dd><label for="protein">Protein:</label></dd> 
-  <dt><input type="text" name="protein" id="protein" value="{{model.stats.protein}}" /></dt>
+      <dd><label for="protein">Protein:</label></dd> 
+      <dt><input type="text" name="protein" id="protein" value="{{model.stats.protein}}" /></dt>
 
-  <dd><label for="fat">Fat:</label></dd> 
-  <dt><input type="text" name="fat" id="fat" value="{{model.stats.fat}}" /></dt>
+      <dd><label for="fat">Fat:</label></dd> 
+      <dt><input type="text" name="fat" id="fat" value="{{model.stats.fat}}" /></dt>
 
-  <dd><label for="carbohydrate">Carbohydrate:</label></dd> 
-  <dt><input type="text" name="carbohydrate" id="carbohydrate" value="{{model.stats.carbohydrate}}" /></dt>
+      <dd><label for="carbohydrate">Carbohydrate:</label></dd> 
+      <dt><input type="text" name="carbohydrate" id="carbohydrate" value="{{model.stats.carbohydrate}}" /></dt>
 
-  <dd><label for="energy">Energy:</label></dd> 
-  <dt><input type="text" name="energy" id="energy" value="{{model.stats.energy}}" /></dt>
+      <dd><label for="energy">Energy:</label></dd> 
+      <dt><input type="text" name="energy" id="energy" value="{{model.stats.energy}}" /></dt>
 
-  <dd><label for="sugar">Sugar:</label></dd> 
-  <dt><input type="text" name="sugar" id="sugar" value="{{model.stats.sugar}}" /></dt>
-</dl>
-<a href="#">SAVE</a>
-
+      <dd><label for="sugar">Sugar:</label></dd> 
+      <dt><input type="text" name="sugar" id="sugar" value="{{model.stats.sugar}}" /></dt>
+    </dl>
+    <input type='submit' value='Save' />
+  </fieldset>
+</form>

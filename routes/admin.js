@@ -1,5 +1,6 @@
 var path = require("path");
 var Items = require(path.dirname(__dirname) + "/routes/items_node.js");
+var _ = require('underscore');
 
 module.exports = function(router) {
   //Collection Calls
@@ -14,13 +15,25 @@ module.exports = function(router) {
     var id = req.params.id;
     console.log("Calling Album GET Router Code with id: " + id);
     res.json(Albums.get(+id));
+
   }).put(function(req, res) {
     //Update / Replace
-    var albums = Albums.get();
-    var current_album = _(albums).findWhere({id: id});
-    _.extend(current_album, req.body);            
-    Albums.set(albums);
-    res.json(current_album);
+    var id = +req.params.id;
+    var items = Items.get();
+    var current_item = _(items).findWhere({id: id});
+    
+    //Rebuild the Stats Hash
+    var stats = {};
+    stats.protein = req.body.protein;
+    stats.fat = req.body.fat;
+    stats.carbohydrate = req.body.carbohydrate;
+    stats.energy = req.body.energy;
+    stats.sugar = req.body.sugar;
+    req.body.stats = stats;
+
+    _.extend(current_item, req.body);  
+    Items.setData(items);
+    res.json(items);
   }).delete( function(req, res) {
     //Delete
     var id = req.params.id;

@@ -75,9 +75,11 @@ this["JST"]["checkout"] = Handlebars.template({"1":function(container,depth0,hel
 this["JST"]["edit_item"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, alias1=container.lambda, alias2=container.escapeExpression;
 
-  return "<img src=\"../images/items/"
+  return "<img src=\"/images/items/"
     + alias2(alias1(((stack1 = (depth0 != null ? depth0.model : depth0)) != null ? stack1.image : stack1), depth0))
-    + "\"><dl><dd><label for=\"name\">Name:</label></dd> <dt><input type=\"text\" name=\"name\" id=\"name\" value=\""
+    + "\"><form action=\"/admin/edit/"
+    + alias2(alias1(((stack1 = (depth0 != null ? depth0.model : depth0)) != null ? stack1.id : stack1), depth0))
+    + "\" method=\"PUT\"> <fieldset><dl><dd><label for=\"name\">Name:</label></dd> <dt><input type=\"text\" name=\"name\" id=\"name\" value=\""
     + alias2(alias1(((stack1 = (depth0 != null ? depth0.model : depth0)) != null ? stack1.name : stack1), depth0))
     + "\" /></dt><dd><label for=\"description\">Description:</label></dd> <dt><input type=\"text\" name=\"description\" id=\"description\" value=\""
     + alias2(alias1(((stack1 = (depth0 != null ? depth0.model : depth0)) != null ? stack1.description : stack1), depth0))
@@ -93,7 +95,7 @@ this["JST"]["edit_item"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main"
     + alias2(alias1(((stack1 = ((stack1 = (depth0 != null ? depth0.model : depth0)) != null ? stack1.stats : stack1)) != null ? stack1.energy : stack1), depth0))
     + "\" /></dt><dd><label for=\"sugar\">Sugar:</label></dd> <dt><input type=\"text\" name=\"sugar\" id=\"sugar\" value=\""
     + alias2(alias1(((stack1 = ((stack1 = (depth0 != null ? depth0.model : depth0)) != null ? stack1.stats : stack1)) != null ? stack1.sugar : stack1), depth0))
-    + "\" /></dt></dl><a href=\"#\">SAVE</a>";
+    + "\" /></dt></dl><input type='submit' value='Save' /></fieldset></form>";
 },"useData":true});
 
 this["JST"]["item_details"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {

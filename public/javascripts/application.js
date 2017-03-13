@@ -41,6 +41,7 @@ var App = {
     this.on("nextItem", this.nextItem);
     this.on("prevItem", this.prevItem);
     this.on("removeItem", this.items.removeItem.bind(this.items));
+    this.on("updateAdmin", this.showAdmin);
   },
 
   //EVENT PROCESSING----------------------------------------
@@ -89,9 +90,8 @@ var App = {
   showAdmin: function() {
     console.log("APP - showAdmin()");
     this.bindEvents();
+    $('#admin ul').html("");  //reset view
     if (this.items.length > 0) {
-      console.log("HERE");
-      console.log(this.items);
       this.items.each(function(item) {
         new AdminItemView({
           model: item
